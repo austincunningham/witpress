@@ -1,0 +1,44 @@
+#{extends 'main.html' /}
+#{set title:'Sign up to  WitPress' /}
+
+<nav class="ui inverted orange menu">
+  <a class="ui item" href="/">About</a>
+  <a class="ui active item" href="/Accounts/SignUp">Sign Up</a>
+  <a class="ui item" href="/Accounts/Login">Log In</a>
+  <a class="ui item" href="/Logout">Logout</a>
+</nav>
+
+<div class="ui fluid form segment">
+		<form action="/Accounts/register" method="POST">
+			<div class="two fields">
+				<div class="field">
+					<input placeholder="First Name" name="firstName" type="text">
+				</div>
+				<div class="field">
+					<input placeholder="Last Name" name="lastName" type="text">
+				</div>
+			</div>
+			<div class="two fields">
+				<div class="ui left icon input field">
+					<input placeholder="Email" name="email" type="text"> <i
+						class="user icon"></i>
+				</div>
+				<div class="ui left icon input field">
+					<input placeholder="Password" type="password" name="password">
+					<i class="lock icon"></i>
+				</div>
+			</div>
+			<div class="inline field">
+				<div class="ui checkbox">
+					<input id="conditions" type="checkbox"> <label
+						for="conditions">I agree to the terms and conditions</label>
+				</div>
+			</div>
+			<button class="ui orange submit button">Submit Data</button>
+			<div class="ui error message"></div>
+	</div>
+	</form>
+	</div>
+	</div>
+</section>
+<script src="@{'/public/javascripts/signup.js'}"></script>

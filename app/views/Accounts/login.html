@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title:'Log in to WitPress' /}
+
+<nav class="ui inverted orange menu">
+  <a class="ui item" href="/">About</a>
+  <a class="ui item" href="/Accounts/SignUp">Sign Up</a>
+  <a class="ui active item" href="/Accounts/Login">Log In</a>
+  <a class="ui item" href="/Logout">Logout</a>
+</nav>
+
+<section class="ui segment">
+  <h3>Log into your account</h3>
+  <h5>Your username is the email you registered with</h5>
+  <form action="/Accounts/authenticate" method="POST">
+    <div class="ui three column grid">
+    <div class="column">
+      <div class="ui fluid form segment">
+        <div class="ui left icon input field">
+          <input placeholder="Email" name="email" type="text">
+          <i class="user icon"></i>
+        </div>
+        <div class="ui left icon input field">
+          <input placeholder="Password" type="password" name="password">
+          <i class="lock icon"></i>
+        </div>
+        <button type="submit" class="ui orange submit button">Login</button>
+      </div>
+    </div>
+    </div>
+  </form>
+</section>
