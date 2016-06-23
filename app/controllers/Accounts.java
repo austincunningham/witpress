@@ -10,11 +10,6 @@ import models.*;
 public class Accounts extends Controller
 {
 
-  public static void index()
-  {
-    render();
-  }
-
   public static void signup()
   {
     render();
@@ -60,7 +55,7 @@ public class Accounts extends Controller
     {
       Logger.info("Authentication successful");
       session.put("logged_in_userid", user.id);
-      index();
+      About.index();
     }
     else
     {
