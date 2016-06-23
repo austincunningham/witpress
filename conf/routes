@@ -12,6 +12,8 @@ GET		/Signup									Accounts.signup
 POST    /authenticate                           Accounts.authenticate
 POST    /register                               Accounts.register
 
+# Blog
+GET 	/Blog									BlogCtrl.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
