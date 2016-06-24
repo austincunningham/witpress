@@ -35,7 +35,7 @@
 		 #{list items:posts, as:'post'}
 	      <div class="item">${post.Title}</div>
 			<div class="item">
-				<form action="/BlogCtrl/deletePost" class="ui form" method="post">  
+				<form action="/Blog/deletePost/${post.id}" class="ui form" method="post">  
 	              <button class="ui mini submit orange button">Delete</button> </ul>
 	        	</form>
 	        </div>

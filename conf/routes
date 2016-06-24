@@ -15,6 +15,7 @@ POST    /register                               Accounts.register
 # Blog
 GET 	/Blog									BlogCtrl.index
 POST 	/Blog/Post								BlogCtrl.post
+POST	/Blog/deletePost/{id}					BlogCtrl.deletePost
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
