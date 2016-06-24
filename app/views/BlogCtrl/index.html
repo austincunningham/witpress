@@ -22,27 +22,23 @@
 		  <div class="ui form">
 	          <div class="field">
 	          	<label>Content</label>
-	            <textarea rows="5"></textarea>
+	            <textarea rows="5" name="Content"></textarea>
 	          </div>
           </div>
-          <button  class="ui fluid orange labeled submit icon button">
+          <button  class="ui orange labeled submit icon button">
             <i class="icon edit"></i> Submit
           </button>
         </form> 
         </div>
-        <div class="six wide column">
-        	<table>
-        	  <thead>
-        	    <tr>
-        	    	<th>Blogs</th>
-        	    </tr>
-        	  </thead>
-        	  <tbody>
-        	  	<tr>
-        	  		<td>list goes here</td>
-        	  	</tr>
-        	  </tbody>
-        	</table>
-        </div>
+        <div class="six wide column segment">       	
+		<div class="ui list">
+		 #{list items:posts, as:'post'}
+	      <div class="item">${post.Title}</div>
+			<div class="item">
+				<form action="/BlogCtrl/deletePost" class="ui form" method="post">  
+	              <button class="ui mini submit orange button">Delete</button> </ul>
+	        	</form>
+	        </div>
+	     #{/list}
       </div>
 </section>

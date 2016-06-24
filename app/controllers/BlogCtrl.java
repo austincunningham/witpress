@@ -2,37 +2,45 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+
+
 import java.util.*;
 import models.*;
 
 public class BlogCtrl extends Controller
 {
+  
   public static void index()
   {
-    render();
+    List<Post> posts = Post.findAll();
+    render(posts);
   }
 
-  public static void post()
+  public static void post(String Title, String Content)
   {
-    //Blog blog = new Blog(User from, String Title, String Content);
-    render();
+    Post post = new Post(Title, Content);
+    Logger.info("Before Loop :"+post.Content+" "+post.Title+" "+post.id);
+    post.save();
+    List<Post> posts = Post.findAll();
+    Logger.info("posts why -1 " +posts.indexOf(2));
+    
+
+    for(int i = 0;i>posts.size();i++)
+    {
+      
+      //Logger.info("In loop post id :"+ posts[i].id +" Title :"+posts.Title+" Content :"+p.Content);
+      posts.add(post);
+      i++;
+      Logger.info("end of Loop :"+post.Content+" "+post.Title+" "+post.id);
+    }
+    render("BlogCtrl/index.html", posts);
   }
 /**
- * clears the session id
+ * 
  */
-  public static void deletePost()
+  public static void deletePost(Post post)
   {
-    
-    //blog.delete();
+    post.delete();
     index();
-  }
-  
-  public static Blog getCurrentPost()
-  {
-    
-    String id = " ";
-    Blog selectedPost = Blog.findById(id);
-    Logger.info("selected Post: " + selectedPost.Title);
-    return selectedPost;
   }
 }
