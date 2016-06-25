@@ -33,7 +33,7 @@
         <div class="six wide column segment">       	
 		<div class="ui list">
 		 #{list items:posts, as:'post'}
-	      <div class="item">${post.Title}</div>
+	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${post.Title}</a></div>
 			<div class="item">
 				<form action="/Blog/deletePost/${post.id}" class="ui form" method="post">  
 	              <button class="ui mini submit orange button">Delete</button> </ul>
