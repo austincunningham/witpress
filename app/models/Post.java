@@ -7,14 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import play.Logger;
 import play.db.jpa.Model;
 
 
 @Entity
 public class Post extends Model
 {
-  @OneToMany(mappedBy = "posts", cascade=CascadeType.ALL)
-  public List<Comment> comments = new ArrayList<Comment>();
+  //@OneToMany(mappedBy = "blog",cascade=CascadeType.ALL)
+ @OneToMany(cascade=CascadeType.ALL)
+ public static List<Comment> comments;
   
   public String Title;
   public String Content;
@@ -24,5 +26,17 @@ public class Post extends Model
   {
     this.Title = Title;
     this.Content = Content;
+    this.comments = new ArrayList<Comment>();
+  }
+  
+  public void commentAdd(Comment comment)
+  {
+    comments.add(comment);
+    int i = 0;
+    for(Comment c: comments)
+    { 
+      Logger.info("comments list :"+ c.comments );
+      i++;
+    }
   }
 }

@@ -9,14 +9,17 @@ import javax.persistence.OneToMany;
 import play.db.jpa.Model;
 
 
+
 @Entity
 public class Comment extends Model
-{
-  @ManyToOne
-  public Comment posts;
+{  
+//  @ManyToOne
+//  public Post blog;
   
-  public Comment()
+  public String comments;
+  
+  public Comment(String comments)
   {
-    this.posts = posts;
+    this.comments = comments;
   }
 }
