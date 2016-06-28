@@ -33,7 +33,7 @@
         </div>
         <div class="six wide column segment">       	
 		<div class="ui list">
-		 #{list items:posts, as:'post'}
+		 #{list items:currentUserPosts, as:'post'}
 	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${post.title}</a></div>
 			<div class="item">
 				<form action="/Blog/deletePost/${post.id}" class="ui form" method="post">  

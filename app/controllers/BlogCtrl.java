@@ -12,8 +12,17 @@ public class BlogCtrl extends Controller
   
   public static void index()
   {
+    User currentUser = Accounts.getCurrentUser();
     List<Post> posts = Post.findAll();
-    render(posts);
+    List<Post> currentUserPosts = new ArrayList<Post>();
+    for(Post post: posts)
+    {
+      if (post.sourceUser.id == currentUser.id)
+      {
+        currentUserPosts.add(post);
+      }
+    }
+    render(currentUserPosts);
   }
 
   public static void post(String title, String content)
