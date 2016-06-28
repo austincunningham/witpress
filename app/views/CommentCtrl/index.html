@@ -10,8 +10,8 @@
 </nav>
 
 <section class="ui segment">
-<h1 class="ui orange header">${post.Title}</h1>
-<h4 class="ui orange header">${post.Content}</h4>
+<h1 class="ui orange header">${post.title}</h1>
+<h4 class="ui orange header">${post.content}</h4>
 
 <div class="ui grid">
   <div class="ten wide column">
@@ -29,8 +29,8 @@
         </div>
         <div class="six wide column segment">       	
 		<div class="ui list">
-		 #{list items:post.this.comments, as:'com'}
-	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${com.comments}</a></div>
+		 #{list items:post.comments, as:'com'}
+	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${com.content}</a></div>
 			<div class="item">
 				<form action="/Comment/deleteComment/${com.id}" class="ui form" method="post">  
 	              <button class="ui mini submit orange button">Delete</button> </ul>

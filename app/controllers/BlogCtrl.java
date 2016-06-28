@@ -16,16 +16,16 @@ public class BlogCtrl extends Controller
     render(posts);
   }
 
-  public static void post(String Title, String Content)
+  public static void post(String title, String content)
   {
-    Post post = new Post(Title, Content);
+    Post post = new Post(title, content);
     post.save();
-    Logger.info("Before Loop :"+post.Content+" "+post.Title+" "+post.id);
+    Logger.info("Before Loop :"+post.content+" "+post.title+" "+post.id);
     List<Post> posts = Post.findAll();
     for(int i = 0;i>posts.size();i++)
     {
       posts.add(post);
-      Logger.info("end of Loop :"+post.Content+" "+post.Title+" "+post.id);
+      Logger.info("end of Loop :"+post.content+" "+post.title+" "+post.id);
     }
     index();
   }

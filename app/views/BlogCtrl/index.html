@@ -16,13 +16,13 @@
           <div class="ui form">
   			<div class="field">
     			<label>Title</label>
-    			<input name="Title" type="text">
+    			<input name="title" type="text">
   			</div>
 		</div>
 		  <div class="ui form">
 	          <div class="field">
 	          	<label>Content</label>
-	            <textarea rows="5" name="Content"></textarea>
+	            <textarea rows="5" name="content"></textarea>
 	          </div>
           </div>
           <button  class="ui orange labeled submit icon button">
@@ -33,7 +33,7 @@
         <div class="six wide column segment">       	
 		<div class="ui list">
 		 #{list items:posts, as:'post'}
-	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${post.Title}</a></div>
+	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${post.title}</a></div>
 			<div class="item">
 				<form action="/Blog/deletePost/${post.id}" class="ui form" method="post">  
 	              <button class="ui mini submit orange button">Delete</button> </ul>

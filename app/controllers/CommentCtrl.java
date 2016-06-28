@@ -14,7 +14,8 @@ public class CommentCtrl extends Controller
   public static void index(Long id)
   {
     Post post = Post.findById(id);
-    render(post);
+    //List<Comment> currentComments =  Comment.findAll();
+    render(post , post.comments);
   }
 
   public static void post(Long id, String Comments)
@@ -22,7 +23,7 @@ public class CommentCtrl extends Controller
     Post post = Post.findById(id);
     Comment com = new Comment(Comments);
     com.save();
-    Logger.info("Comment id: "+ com.id); 
+    Logger.info("Comment id: "+ com.id + " Post id: "+post.id);
     post.commentAdd(com);
     index(id);
   }

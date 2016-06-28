@@ -13,13 +13,13 @@ import play.db.jpa.Model;
 @Entity
 public class Comment extends Model
 {  
-//  @ManyToOne
-//  public Post blog;
+  @ManyToOne
+  public Post blogComment;
   
-  public String comments;
+  public String content;
   
-  public Comment(String comments)
+  public Comment(String content)
   {
-    this.comments = comments;
+    this.content = content;
   }
 }
