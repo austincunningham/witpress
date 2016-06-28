@@ -17,14 +17,18 @@ public class Post extends Model
   @OneToMany(mappedBy = "blogComment", cascade=CascadeType.ALL)
   //@OneToMany(cascade = CascadeType.ALL)
   public List<Comment> comments  = new ArrayList<Comment>();
+  
+  @ManyToOne
+  public User sourceUser;
 
   public String title;
   public String content;
 
-  public Post(String title, String content)
+  public Post(String title, String content, User sourceUser)
   {
     this.title = title;
     this.content = content;
+    this.sourceUser = sourceUser;
   }
 
   public void commentAdd(Comment com)

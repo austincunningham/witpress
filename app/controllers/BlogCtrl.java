@@ -18,9 +18,10 @@ public class BlogCtrl extends Controller
 
   public static void post(String title, String content)
   {
-    Post post = new Post(title, content);
+    User sourceUser = Accounts.getCurrentUser();
+    Post post = new Post(title, content, sourceUser);
     post.save();
-    Logger.info("Before Loop :"+post.content+" "+post.title+" "+post.id);
+    Logger.info("Before Loop :"+post.content+" "+post.title+" "+post.id+" "+sourceUser.firstName);
     List<Post> posts = Post.findAll();
     for(int i = 0;i>posts.size();i++)
     {
