@@ -27,4 +27,12 @@ public class CommentCtrl extends Controller
     post.commentAdd(com);
     index(id);
   }
+  public static void deleteComment(Long id)
+  {
+    //Post post = Post.findById(postId);
+    Comment comment = Comment.findById(id);
+    comment.delete();
+    index(comment.blogComment.id);
+  }
+  
 }

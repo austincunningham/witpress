@@ -19,7 +19,8 @@ POST	/Blog/deletePost/{id}					BlogCtrl.deletePost
 
 # Comments
 GET		/Comment/{id}							CommentCtrl.index
-POST	/Comment/post/{id}						CommentCtrl.post
+POST	/Comment/post/{id}       				CommentCtrl.post
+POST  	/Comment/deleteComment/{id}		     	CommentCtrl.deleteComment
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
