@@ -4,7 +4,7 @@
 
 * Quick summary: Play 1.4 app written in java, blog Application allowing posting and deletion of messages.
 * Version: 23/06/2016 iteration_v2
-* [Live version of app on Heroku](http://witpress-austin.herokuapp.com)
+* [Click here for Live version of app on Heroku](http://witpress-austin.herokuapp.com)
 * Login:homer@simpson.com
 * Password:secret
 ![witpress.JPG](https://bitbucket.org/repo/B77MGo/images/2537900400-witpress.JPG)
