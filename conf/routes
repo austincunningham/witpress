@@ -23,7 +23,7 @@ POST	/Comment/post/{id}       				CommentCtrl.post
 POST  	/Comment/deleteComment/{id}		     	CommentCtrl.deleteComment
 
 # PublicBlog
-GET 	/PublicBlogDirectory					PublicBlog.index
+GET 	/PublicBlogDirectory					PublicBlogDirectory.index
 
 
 # Ignore favicon requests
