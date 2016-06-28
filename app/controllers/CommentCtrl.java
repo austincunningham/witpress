@@ -21,9 +21,9 @@ public class CommentCtrl extends Controller
   public static void post(Long id, String Comments)
   {
     Post post = Post.findById(id);
-    Comment com = new Comment(Comments);
+    Comment com = new Comment(Comments, post);
     com.save();
-    Logger.info("Comment id: "+ com.id + " Post id: "+post.id);
+    Logger.info("Comment id: "+ com.id + " Post id: "+post.id+" anything here? "+com.blogComment);
     post.commentAdd(com);
     index(id);
   }

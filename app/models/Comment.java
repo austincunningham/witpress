@@ -18,8 +18,9 @@ public class Comment extends Model
   
   public String content;
   
-  public Comment(String content)
+  public Comment(String content,Post blogComment)
   {
     this.content = content;
+    this.blogComment = blogComment;
   }
 }

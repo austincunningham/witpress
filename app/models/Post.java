@@ -14,9 +14,9 @@ import play.db.jpa.Model;
 @Entity
 public class Post extends Model
 {
-  @OneToMany(mappedBy = "blogComment",cascade=CascadeType.ALL)
+  @OneToMany(mappedBy = "blogComment", cascade=CascadeType.ALL)
   //@OneToMany(cascade = CascadeType.ALL)
-  public List<Comment> comments;
+  public List<Comment> comments  = new ArrayList<Comment>();
 
   public String title;
   public String content;
