@@ -22,6 +22,10 @@ GET		/Comment/{id}							CommentCtrl.index
 POST	/Comment/post/{id}       				CommentCtrl.post
 POST  	/Comment/deleteComment/{id}		     	CommentCtrl.deleteComment
 
+# PublicBlog
+GET 	/PublicBlogDirectory					PublicBlog.index
+
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
