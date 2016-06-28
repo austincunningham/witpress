@@ -5,7 +5,9 @@
   <a class="ui item" href="/">About</a>
   <a class="ui item" href="/Accounts/SignUp">Sign Up</a>
   <a class="ui active item" href="/Accounts/Login">Log In</a>
+  #{if currentUser != null}
   <a class="ui item" href="/Blog">Blog</a>
+  #{/if}
   <a class="ui item" href="/PublicBlogDirectory">Public Blog Directory</a>
   <a class="ui item" href="/Logout">Logout</a>
 </nav>

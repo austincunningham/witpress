@@ -11,8 +11,9 @@ public class PublicBlogDirectory extends Controller
 
   public static void index()
   {
+    User currentUser = Accounts.getCurrentUser();
     List<User> alluser =  User.findAll();
-    render(alluser);
+    render(alluser, currentUser);
   }
 
 }

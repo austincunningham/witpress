@@ -13,9 +13,10 @@ public class CommentCtrl extends Controller
 
   public static void index(Long id)
   {
+    User currentUser = Accounts.getCurrentUser();
     Post post = Post.findById(id);
     //List<Comment> currentComments =  Comment.findAll();
-    render(post , post.comments);
+    render(post , post.comments,currentUser);
   }
 
   public static void post(Long id, String Comments)

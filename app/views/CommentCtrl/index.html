@@ -5,7 +5,9 @@
   <a class="ui item" href="/">About</a>
   <a class="ui item" href="/Accounts/SignUp">Sign Up</a>
   <a class="ui item" href="/Accounts/Login">Log In</a>
+  #{if currentUser != null}
   <a class="ui active item" href="/Blog">Blog</a>
+  #{/if}
   <a class="ui item" href="/PublicBlogDirectory">Public Blog Directory</a>
   <a class="ui item" href="/Logout">Logout</a>
 </nav>
@@ -21,13 +23,17 @@
 		 #{list items:post.comments, as:'com'}
 	      <div class="item"><a class="ui item" href="/Comment/${post.id}">${com.content}</a></div>
 			<div class="item">
-				<form action="/Comment/deleteComment/${com.id}" class="ui form" method="post">  
+   				#{if currentUser != null}
+                  <form action="/Comment/deleteComment/${com.id}" class="ui form" method="post">  
 	              <button class="ui mini submit orange button">Delete</button> </ul>
 	        	</form>
+				#{/if}
+				
 	        </div>
 	     #{/list}
       </div>
- <form action="/Comment/post/${post.id}" class="ui form" method="post">
+      #{if currentUser != null}
+        <form action="/Comment/post/${post.id}" class="ui form" method="post">
 		  <div class="ui form">
 	          <div class="field">
 	          	<label>Comment</label>
@@ -38,5 +44,6 @@
             <i class="icon edit"></i> Submit
           </button>
         </form> 
+        #{/if}
         </div>
 </section>

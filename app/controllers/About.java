@@ -7,10 +7,13 @@ import java.util.*;
 
 import models.*;
 
-public class About extends Controller {
+public class About extends Controller
+{
 
-    public static void index() {
-        render();
-    }
+  public static void index()
+  {
+    User currentUser = Accounts.getCurrentUser();
+    render(currentUser);
+  }
 
 }

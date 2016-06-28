@@ -12,12 +12,14 @@ public class Accounts extends Controller
 
   public static void signup()
   {
-    render();
+    User currentUser = Accounts.getCurrentUser();
+    render(currentUser);
   }
 
   public static void login()
   {
-    render();
+    User currentUser = Accounts.getCurrentUser();
+    render(currentUser);
   }
 /**
  * clears the session id
