@@ -21,7 +21,7 @@
 	<tbody>
 	  #{list items:alluser, as:'user'}
 	    <tr>
-	      <td><i class="user icon"></i>&nbsp${user.firstName}&nbsp${user.lastName} </td>
+	      <td><i class="user icon"></i><a class=ui item" href="/PublicBlog/${user.id}">&nbsp${user.firstName}&nbsp${user.lastName}</a> </td>
 	    </tr>
 	  #{/list}
 	</tbody>

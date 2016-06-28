@@ -24,6 +24,7 @@ POST  	/Comment/deleteComment/{id}		     	CommentCtrl.deleteComment
 
 # PublicBlog
 GET 	/PublicBlogDirectory					PublicBlogDirectory.index
+GET		/PublicBlog/{id}						PublicBlog.index
 
 
 # Ignore favicon requests

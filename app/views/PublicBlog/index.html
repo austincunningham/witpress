@@ -12,5 +12,19 @@
 
 <section class="ui segment">
 
+	<table class="ui inverted orange table segment">
+	<thead>
+	  <tr>
+	    <th>Public blogs &nbsp${currentUser.firstName}&nbsp${currentUser.lastName}</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  #{list items:userPosts, as:'post'}
+	    <tr>
+	      <td><i class="user icon"></i><a class=ui item" href="/PublicBlog/${post.id}">&nbsp${post.title}&nbsp${post.content}</a> </td>
+	    </tr>
+	  #{/list}
+	</tbody>
+	</table>
 
 </section>
